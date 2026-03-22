@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-body;
+  background-image: radial-gradient(circle at 6% 4%, rgba(47, 125, 255, 0.18) 0, transparent 30%),
+    radial-gradient(circle at 92% 16%, rgba(255, 138, 31, 0.16) 0, transparent 28%),
+    linear-gradient(180deg, #f4f8ff 0%, #f7f9fc 44%, #ffffff 100%);
+  background-attachment: fixed;
+}
+
+@media (max-width: 640px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+.section-shell {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply font-heading text-3xl sm:text-4xl lg:text-5xl text-brand-900;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  @apply mt-3 text-slate-600 max-w-2xl;
+}
+
+.card {
+  @apply rounded-2xl bg-white/95 p-6 shadow-soft border border-slate-100 transition duration-300;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(23, 60, 120, 0.16);
+}
+
+.interactive-card {
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-card::after {
+  content: '';
+  position: absolute;
+  inset: -120% -30% auto;
+  height: 220%;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.5) 48%, transparent 60%);
+  transform: translateX(-120%) rotate(5deg);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.interactive-card:hover::after {
+  transform: translateX(120%) rotate(5deg);
+}
+
+.service-icon-wrap {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.interactive-card:hover .service-icon-wrap {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(47, 125, 255, 0.18);
+}
+
+.review-star {
+  transform-origin: center;
+}
+
+.interactive-card:hover .review-star {
+  animation: starPop 0.48s ease both;
+}
+
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(23, 60, 120, 0.1);
+  }
+
+  .interactive-card::after {
+    display: none;
+  }
+
+  .interactive-card:hover .service-icon-wrap {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .interactive-card:hover .review-star {
+    animation: none;
+  }
+}
+
+.mesh-bg {
+  position: relative;
+}
+
+.mesh-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.24;
+}
+
+.cta-pulse {
+  position: relative;
+}
+
+.cta-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 138, 31, 0.3);
+  animation: ringPulse 2.4s ease-out infinite;
+}
+
+.edge-glow {
+  position: relative;
+}
+
+.edge-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgba(47, 125, 255, 0.65), rgba(255, 138, 31, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+section {
+  scroll-margin-top: 124px;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes starPop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.24);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
