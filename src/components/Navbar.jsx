@@ -18,12 +18,12 @@ export default function Navbar() {
       <div className="border-b border-brand-700/30 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800/95 backdrop-blur-md">
         <nav className="section-shell py-2 sm:py-3" aria-label="Navigation principale">
           <div className="navbar-shell flex h-[62px] items-center justify-between px-2.5 sm:h-20 sm:px-5">
-            <a href="#" className="inline-flex items-center gap-2 sm:gap-3 text-lg font-heading font-bold tracking-tight sm:text-2xl">
+            <a href="#" className="inline-flex items-center gap-1.5 text-base font-heading font-bold tracking-tight sm:gap-3 sm:text-2xl">
               <span className="logo-frame">
                 <img
                   src={logoRabi}
                   alt="Logo AquaChauffagiste"
-                  className="h-11 w-11 object-contain sm:h-14 sm:w-14"
+                  className="h-10 w-10 object-contain sm:h-14 sm:w-14"
                 />
               </span>
               <span className="hidden sm:inline">
@@ -32,7 +32,12 @@ export default function Navbar() {
                 <span className="text-brand-300">C</span>
                 <span className="text-white">hauffagiste</span>
               </span>
-              <span className="sm:hidden text-lg"><span className="text-accent-400">A</span><span className="text-white">qua</span><span className="text-brand-300">C</span></span>
+              <span className="sm:hidden text-[14px] leading-none">
+                <span className="text-accent-400">A</span>
+                <span className="text-white">qua</span>
+                <span className="text-brand-300">C</span>
+                <span className="text-white">hauffagiste</span>
+              </span>
             </a>
 
             <ul className="hidden items-center gap-6 lg:flex">
