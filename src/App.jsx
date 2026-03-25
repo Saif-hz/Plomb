@@ -4,12 +4,14 @@ import FloatingCallButton from './components/FloatingCallButton';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import PartnerLogos from './components/PartnerLogos';
 import Projects from './components/Projects';
 import Reviews from './components/Reviews';
 import ServiceArea from './components/ServiceArea';
 import Services from './components/Services';
 import TrustStrip from './components/TrustStrip';
 import WhyChooseUs from './components/WhyChooseUs';
+import WorkGallery from './components/WorkGallery';
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
         <Services />
         <WhyChooseUs />
         <Projects />
+        <WorkGallery />
+        <PartnerLogos />
         <Reviews />
         <FAQ />
         <ServiceArea />

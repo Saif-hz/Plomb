@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
+import { businessInfo } from '../data';
 
 const sectionActions = {
   services: { href: '#services', label: 'Voir services' },
@@ -50,7 +51,7 @@ export default function FloatingCallButton() {
   return (
     <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-50 flex w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 gap-2 rounded-2xl border border-white/60 bg-white/95 p-2 shadow-xl backdrop-blur md:hidden">
       <a
-        href="tel:+33472123456"
+        href={`tel:${businessInfo.phoneHref}`}
         className="cta-pulse inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-accent-500 px-4 py-3 text-sm font-bold text-white"
         aria-label="Appeler maintenant"
       >

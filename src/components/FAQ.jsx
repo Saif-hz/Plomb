@@ -9,9 +9,9 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-20 sm:py-24">
       <div className="section-shell">
-        <h2 className="section-title">Questions frequentes avant intervention</h2>
+        <h2 className="section-title">Questions fréquentes avant intervention</h2>
         <p className="section-subtitle">
-          Les reponses qui rassurent vos clients avant l appel: delais, prix, garanties, methodes.
+          Les réponses qui rassurent avant l appel: délais, prix, garanties, méthodes.
         </p>
 
         <div className="mt-10 space-y-3">

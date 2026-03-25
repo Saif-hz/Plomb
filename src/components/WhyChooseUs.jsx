@@ -8,25 +8,24 @@ export default function WhyChooseUs() {
         <div className="grid gap-8 rounded-3xl bg-brand-950 p-8 text-white sm:p-12 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-400">
-              Notre methode
+              Notre méthode
             </p>
-            <h2 className="mt-2 font-heading text-3xl sm:text-4xl">Un process clair en 3 etapes</h2>
+            <h2 className="mt-2 font-heading text-3xl sm:text-4xl">Un processus clair en 3 étapes</h2>
             <p className="mt-4 max-w-md text-white/85">
-              Vous savez qui intervient, a quel prix et dans quel delai. Chaque etape est annoncee
-              a l avance.
+              Vous savez qui intervient, à quel prix et dans quel délai. Chaque étape est annoncée à l\'avance.
             </p>
             <ol className="mt-7 space-y-4 text-sm text-white/85">
               <li className="flex items-start gap-3">
                 <span className="rounded-full bg-white/15 px-2 py-0.5 font-semibold text-white">1</span>
-                Appel ou formulaire: qualification du probleme en moins de 3 minutes.
+                Appel ou formulaire: qualification du problème en moins de 3 minutes.
               </li>
               <li className="flex items-start gap-3">
                 <span className="rounded-full bg-white/15 px-2 py-0.5 font-semibold text-white">2</span>
-                Devis annonce avant action, validation avec vous avant intervention.
+                Devis annoncé avant action, validation avec vous avant intervention.
               </li>
               <li className="flex items-start gap-3">
                 <span className="rounded-full bg-white/15 px-2 py-0.5 font-semibold text-white">3</span>
-                Reparation soignee, verification finale, zone laissee propre.
+                Réparation soignée, vérification finale, zone laissée propre.
               </li>
             </ol>
           </div>

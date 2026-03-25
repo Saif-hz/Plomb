@@ -1,13 +1,13 @@
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { businessInfo } from '../data';
 
 export default function Footer() {
   return (
     <footer className="bg-brand-950 py-12 text-white">
       <div className="section-shell grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-heading text-xl">Atelier Bleu 24</p>
+          <p className="font-heading text-xl">{businessInfo.brand}</p>
           <p className="mt-3 text-sm text-white/75">
-            Plomberie artisanale premium pour urgences, installations et renovation a Lyon.
+            Plomberie et chauffage pour urgences, installations et renovations a {businessInfo.city}.
           </p>
         </div>
 
@@ -38,31 +38,23 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="font-semibold">Coordonnees</p>
+          <p className="font-semibold">Coordonnées</p>
           <ul className="mt-3 space-y-2 text-sm text-white/75">
-            <li>+33 4 72 12 34 56</li>
-            <li>contact@atelierbleu24.fr</li>
-            <li>18 Rue de la République, Lyon</li>
+            <li>{businessInfo.phoneDisplay}</li>
+            <li>{businessInfo.email}</li>
+            <li>{businessInfo.addressLine}, {businessInfo.city}</li>
           </ul>
         </div>
 
         <div>
           <p className="font-semibold">Suivez-nous</p>
-          <div className="mt-3 flex gap-3 text-white/80">
-            <a href="#" aria-label="Facebook" className="rounded-full bg-white/10 p-2 hover:bg-white/20">
-              <Facebook size={16} />
-            </a>
-            <a href="#" aria-label="Instagram" className="rounded-full bg-white/10 p-2 hover:bg-white/20">
-              <Instagram size={16} />
-            </a>
-            <a href="#" aria-label="LinkedIn" className="rounded-full bg-white/10 p-2 hover:bg-white/20">
-              <Linkedin size={16} />
-            </a>
-          </div>
+          <p className="mt-3 text-sm text-white/75">
+            Retrouvez-nous sur nos plateformes de presence en ligne ou contactez-nous directement.
+          </p>
         </div>
       </div>
       <div className="section-shell mt-10 border-t border-white/10 pt-5 text-xs text-white/60">
-        © {new Date().getFullYear()} Atelier Bleu 24. Tous droits reserves.
+        © {new Date().getFullYear()} {businessInfo.brand}. Tous droits reserves.
       </div>
     </footer>
   );

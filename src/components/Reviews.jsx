@@ -8,7 +8,7 @@ export default function Reviews() {
       <div className="section-shell">
         <h2 className="section-title">Avis clients</h2>
         <p className="section-subtitle">
-          Retours verifies apres intervention, avec ville et type de prestation.
+          Retours vérifiés après intervention, avec ville et type de prestation.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">

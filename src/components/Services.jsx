@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { services } from '../data';
+import { businessInfo, services } from '../data';
 
 export default function Services() {
   return (
     <section id="services" className="py-20 sm:py-24">
       <div className="section-shell">
-        <h2 className="section-title">Prestations les plus demandees</h2>
+        <h2 className="section-title">Prestations les plus demandées</h2>
         <p className="section-subtitle">
-          Des interventions pensees pour aller droit au resultat avec une execution propre.
+          Des interventions pensées pour aller droit au résultat avec une exécution soignée.
         </p>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -24,6 +24,12 @@ export default function Services() {
                 transition={{ duration: 0.45, delay: idx * 0.06 }}
                 className="card interactive-card group"
               >
+                <img
+                  src={service.image}
+                  alt={`${service.title} - chantier AquaChauffagiste`}
+                  className="h-36 w-full rounded-xl object-cover"
+                  loading="lazy"
+                />
                 <div className="service-icon-wrap inline-flex rounded-xl bg-brand-100 p-3 text-brand-700">
                   <Icon size={20} />
                 </div>
@@ -36,7 +42,7 @@ export default function Services() {
                   <p className="text-xs text-slate-500">Duree moyenne: {service.duration}</p>
                 </div>
                 <a
-                  href="tel:+33472123456"
+                  href={`tel:${businessInfo.phoneHref}`}
                   className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 transition group-hover:gap-2 group-hover:text-brand-900"
                 >
                   Demander cette intervention

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock3, PhoneCall, Send, ShieldCheck } from 'lucide-react';
-import { quickProblems } from '../data';
+import { businessInfo, heroImage, quickProblems } from '../data';
 
 export default function Hero() {
   return (
@@ -17,18 +17,18 @@ export default function Hero() {
             transition={{ duration: 0.55 }}
           >
             <p className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wide sm:px-4 sm:text-xs">
-              Plombier local premium - Lyon et metropole
+              {businessInfo.brand} - {businessInfo.city} et alentours
             </p>
             <h1 className="font-heading text-3xl leading-tight sm:text-5xl lg:text-[3.55rem]">
-              Un pepin de plomberie n attend pas. Nous non plus.
+              Plomberie et chauffage: intervention rapide 24h/24, 7j/7.
             </h1>
             <p className="mt-6 max-w-xl text-white/90 sm:text-lg">
-              Depannage, installation et renovation avec un niveau de finition haut de gamme.
-              Vous connaissez le prix avant intervention, toujours.
+              Dépannage, installation et rénovation avec un niveau de finition professionnel.
+              Prix annoncé avant intervention, sans mauvaise surprise.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="tel:+33472123456"
+                href={`tel:${businessInfo.phoneHref}`}
                 className="cta-pulse inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-6 py-3 font-bold text-white transition hover:bg-accent-600 sm:w-auto"
               >
                 <PhoneCall size={18} />
@@ -45,10 +45,10 @@ export default function Hero() {
 
             <div className="mt-6 flex flex-wrap gap-3 text-xs sm:text-sm">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 font-semibold text-white/95">
-                <Clock3 size={14} /> Arrivee moyenne en 45 min
+                <Clock3 size={14} /> Disponibilite rapide
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 font-semibold text-white/95">
-                <ShieldCheck size={14} /> Prix annonces avant intervention
+                <ShieldCheck size={14} /> {businessInfo.phoneDisplay}
               </span>
             </div>
           </motion.div>
@@ -61,9 +61,14 @@ export default function Hero() {
             className="edge-glow rounded-3xl border border-white/20 bg-white/10 p-5 backdrop-blur sm:p-6"
           >
             <div className="rounded-2xl bg-white p-5 text-slate-900 shadow-soft sm:p-6">
+              <img
+                src={heroImage}
+                alt="Installation chauffage realisee par AquaChauffagiste"
+                className="mb-4 h-44 w-full rounded-xl object-cover"
+              />
               <p className="text-sm font-semibold text-brand-700">Diagnostic express</p>
               <p className="mt-1 font-heading text-2xl text-brand-900 sm:text-3xl">Quel est votre probleme ?</p>
-              <p className="mt-2 text-sm text-slate-600">Choisissez votre situation pour etre rappelle plus vite.</p>
+              <p className="mt-2 text-sm text-slate-600">Selectionnez votre situation pour etre contacte plus vite.</p>
 
               <div className="mt-5 space-y-3">
                 {quickProblems.map((problem) => (
