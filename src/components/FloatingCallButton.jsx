@@ -49,10 +49,10 @@ export default function FloatingCallButton() {
   );
 
   return (
-    <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-50 flex w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 gap-2 rounded-2xl border border-white/60 bg-white/95 p-2 shadow-xl backdrop-blur md:hidden">
+    <div className="fixed bottom-[max(0.75rem,env(safe-area-inset-bottom))] left-1/2 z-50 flex w-[calc(100%-1rem)] max-w-md -translate-x-1/2 gap-2 rounded-2xl border border-white/60 bg-white/95 p-1.5 shadow-xl backdrop-blur md:hidden">
       <a
         href={`tel:${businessInfo.phoneHref}`}
-        className="cta-pulse inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-accent-500 px-4 py-3 text-sm font-bold text-white"
+        className="cta-pulse inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-3 py-2.5 text-[13px] font-bold text-white"
         aria-label="Appeler maintenant"
       >
         <Phone size={16} />
@@ -60,9 +60,9 @@ export default function FloatingCallButton() {
       </a>
       <a
         href={secondaryAction.href}
-        className="inline-flex flex-1 items-center justify-center gap-1 rounded-xl bg-brand-900 px-4 py-3 text-sm font-bold text-white transition hover:bg-brand-800"
+        className="inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl bg-brand-900 px-3 py-2.5 text-[13px] font-bold text-white transition hover:bg-brand-800"
       >
-        {secondaryAction.label}
+        <span className="truncate">{secondaryAction.label}</span>
         <ArrowRight size={14} />
       </a>
     </div>

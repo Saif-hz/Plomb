@@ -33,19 +33,19 @@ export default function Contact() {
   const whatsappLink = `https://wa.me/33609217169?text=${whatsappMessage}`;
 
   return (
-    <section id="contact" className="py-20 sm:py-24">
+    <section id="contact" className="py-14 sm:py-24">
       <div className="section-shell">
-        <div className="grid gap-8 rounded-3xl border border-brand-100 bg-white p-8 shadow-soft sm:p-10 lg:grid-cols-[1.05fr_1fr]">
+        <div className="grid gap-6 rounded-3xl border border-brand-100 bg-white p-5 shadow-soft sm:gap-8 sm:p-10 lg:grid-cols-[1.05fr_1fr]">
           <div>
             <h2 className="section-title">Parlons de votre intervention</h2>
             <p className="section-subtitle">
               Décrivez le problème en 30 secondes. Un expert vous contactera rapidement.
             </p>
 
-            <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href={`tel:${businessInfo.phoneHref}`}
-                className="inline-flex items-center gap-2 rounded-2xl bg-brand-900 px-5 py-3 font-bold text-white transition hover:bg-brand-800"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-900 px-5 py-3 font-bold text-white transition hover:bg-brand-800 sm:w-auto"
               >
                 <PhoneCall size={18} />
                 Appeler
@@ -54,7 +54,7 @@ export default function Contact() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-green-600 px-5 py-3 font-bold text-white transition hover:bg-green-700"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-green-600 px-5 py-3 font-bold text-white transition hover:bg-green-700 sm:w-auto"
               >
                 <MessageCircle size={18} />
                 WhatsApp
@@ -132,7 +132,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full rounded-full bg-accent-500 px-6 py-3 font-bold text-white transition hover:bg-accent-600 disabled:opacity-60"
+              className="w-full rounded-full bg-accent-500 px-6 py-3.5 text-base font-bold text-white transition hover:bg-accent-600 disabled:opacity-60"
             >
               {isSubmitting ? 'Envoi en cours...' : 'Recevoir mon devis'}
             </button>

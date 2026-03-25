@@ -175,10 +175,29 @@ section {
 @media (max-width: 640px) {
   .section-title {
     font-size: 1.875rem;
+    line-height: 1.2;
   }
   
   h1 {
     font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .section-shell {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .navbar-shell {
+    border-radius: 1rem;
+  }
+
+  .cta-pulse::after {
+    display: none;
+  }
+
+  section {
+    scroll-margin-top: 98px;
   }
 }
 
