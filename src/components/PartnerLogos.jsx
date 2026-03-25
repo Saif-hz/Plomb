@@ -1,6 +1,8 @@
 import { partnerLogoBoards } from '../data';
 
 export default function PartnerLogos() {
+  const logoBoard = partnerLogoBoards[0];
+
   return (
     <section className="py-8 sm:py-12">
       <div className="section-shell">
@@ -10,17 +12,16 @@ export default function PartnerLogos() {
             Nous intervenons sur des équipements de grandes marques reconnues.
           </p>
 
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
-            {partnerLogoBoards.map((logoBoard, idx) => (
+          {logoBoard && (
+            <div className="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white">
               <img
-                key={`${logoBoard}-${idx}`}
                 src={logoBoard}
                 alt="Marques partenaires AquaChauffagiste"
-                className="h-40 w-full rounded-xl border border-slate-200 object-cover"
+                className="h-60 w-full object-cover object-center sm:h-72 lg:h-80"
                 loading="lazy"
               />
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

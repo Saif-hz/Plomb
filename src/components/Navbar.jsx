@@ -9,23 +9,29 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
+      {/* Trust Banner */}
+      <div className="bg-gradient-to-r from-accent-500 to-orange-500 py-2 text-white text-center text-xs sm:text-sm font-semibold">
+        🚀 <span className="hidden sm:inline">Intervention rapide garantie |</span> Tarifs transparents | <span className="hidden sm:inline">Devis gratuit</span>
+      </div>
+
       <div className="border-b border-brand-700/30 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800/95 backdrop-blur-md">
         <nav className="section-shell py-2 sm:py-3" aria-label="Navigation principale">
           <div className="navbar-shell flex h-16 items-center justify-between px-3 sm:h-20 sm:px-5">
-            <a href="#" className="inline-flex items-center gap-3 text-lg font-heading font-bold tracking-tight sm:text-2xl">
+            <a href="#" className="inline-flex items-center gap-2 sm:gap-3 text-lg font-heading font-bold tracking-tight sm:text-2xl">
               <span className="logo-frame">
                 <img
                   src={logoRabi}
                   alt="Logo AquaChauffagiste"
-                  className="h-12 w-12 object-contain sm:h-14 sm:w-14"
+                  className="h-12 sm:h-14 w-12 sm:w-14 object-contain"
                 />
               </span>
-              <span>
+              <span className="hidden sm:inline">
                 <span className="text-accent-400">A</span>
                 <span className="text-white">qua</span>
                 <span className="text-brand-300">C</span>
                 <span className="text-white">hauffagiste</span>
               </span>
+              <span className="sm:hidden text-lg"><span className="text-accent-400">A</span><span className="text-white">qua</span><span className="text-brand-300">C</span></span>
             </a>
 
             <ul className="hidden items-center gap-6 lg:flex">
@@ -40,7 +46,7 @@ export default function Navbar() {
 
             <a
               href={`tel:${businessInfo.phoneHref}`}
-              className="navbar-cta hidden md:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white"
+              className="navbar-cta hidden md:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               <Phone size={16} />
               Appeler maintenant

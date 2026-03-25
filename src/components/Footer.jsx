@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-brand-950 py-12 text-white">
       <div className="section-shell grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-heading text-xl">{businessInfo.brand}</p>
+          <p className="font-heading text-2xl font-bold text-white">{businessInfo.brand}</p>
           <p className="mt-3 text-sm text-white/75">
             Plomberie et chauffage pour urgences, installations et renovations a {businessInfo.city}.
           </p>
@@ -15,22 +15,22 @@ export default function Footer() {
           <p className="font-semibold">Liens rapides</p>
           <ul className="mt-3 space-y-2 text-sm text-white/75">
             <li>
-              <a href="#services" className="hover:text-white">
+              <a href="#services" className="hover:text-accent-300 transition-colors">
                 Services
               </a>
             </li>
             <li>
-              <a href="#projects" className="hover:text-white">
+              <a href="#projects" className="hover:text-accent-300 transition-colors">
                 Realisations
               </a>
             </li>
             <li>
-              <a href="#reviews" className="hover:text-white">
+              <a href="#reviews" className="hover:text-accent-300 transition-colors">
                 Avis
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-white">
+              <a href="#contact" className="hover:text-accent-300 transition-colors">
                 Contact
               </a>
             </li>

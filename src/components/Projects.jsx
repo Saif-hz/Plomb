@@ -8,7 +8,7 @@ export default function Projects() {
       <div className="section-shell">
         <h2 className="section-title">Avant / après: preuves terrain</h2>
         <p className="section-subtitle">
-          Des cas réels pour juger notre niveau de finition et notre vitesse de résolution.
+          Des cas réels pour juger notre niveau de finition, notre rapidité d\'intervention et notre transparence.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -19,31 +19,31 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06 }}
-              className="card"
+              className="card border-2 border-slate-100 hover:border-accent-300 hover:shadow-xl"
             >
-              <h3 className="font-heading text-xl text-brand-900">{project.title}</h3>
+              <h3 className="font-heading text-2xl font-bold text-brand-900">{project.title}</h3>
               <img
                 src={project.image}
                 alt={`${project.title} - realisation AquaChauffagiste`}
-                className="mt-4 h-44 w-full rounded-xl object-cover"
+                className="mt-4 h-48 w-full rounded-xl object-cover shadow-md"
                 loading="lazy"
               />
               <div className="mt-4 grid gap-3 text-sm sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-                <p className="rounded-xl border border-rose-100 bg-rose-50 p-3 text-rose-800">
+                <p className="rounded-xl border-2 border-rose-200 bg-rose-50 p-4 text-rose-900 font-semibold">
                   <span className="block text-xs font-bold uppercase tracking-wide text-rose-700">
                     Avant
                   </span>
                   {project.before}
                 </p>
                 <ArrowRight className="mx-auto hidden text-brand-500 sm:block" size={18} />
-                <p className="rounded-xl border border-emerald-100 bg-emerald-50 p-3 text-emerald-800">
+                <p className="rounded-xl border-2 border-emerald-300 bg-emerald-50 p-4 text-emerald-900 font-semibold shadow-md">
                   <span className="block text-xs font-bold uppercase tracking-wide text-emerald-700">
                     Apres
                   </span>
                   {project.after}
                 </p>
               </div>
-              <p className="mt-4 rounded-xl border border-brand-100 bg-brand-50 p-3 text-sm font-semibold text-brand-800">
+              <p className="mt-4 rounded-xl border-2 border-brand-200 bg-gradient-to-r from-brand-50 to-accent-50 p-4 text-sm font-bold text-brand-900">
                 Impact: {project.impact}
               </p>
               <div className="mt-3 flex items-center gap-3 rounded-xl bg-slate-100 p-2">

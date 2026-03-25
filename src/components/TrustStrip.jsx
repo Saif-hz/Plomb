@@ -46,16 +46,16 @@ export default function TrustStrip() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid gap-4 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-soft backdrop-blur sm:grid-cols-2 lg:grid-cols-4 sm:p-5"
+          className="grid gap-4 rounded-2xl border-2 border-white/80 bg-gradient-to-br from-white via-white to-slate-50/90 p-6 shadow-lg backdrop-blur sm:grid-cols-2 lg:grid-cols-4 sm:p-8"
         >
           {keyStats.map((stat) => {
             return (
               <div key={stat.label} className="rounded-xl bg-slate-50/70 p-4">
-                <p className="font-heading text-3xl text-brand-900 sm:text-4xl">
+                <p className="font-heading text-4xl sm:text-5xl font-bold text-brand-900">
                   <AnimatedStat target={stat.target} suffix={stat.suffix} decimals={stat.decimals} />
                 </p>
-                <p className="mt-1 text-sm text-slate-600">{stat.label}</p>
-                <div className="mt-3 h-1.5 w-14 rounded-full bg-gradient-to-r from-brand-400 to-accent-500" />
+                <p className="mt-2 text-sm font-semibold text-slate-700">{stat.label}</p>
+                <div className="mt-4 h-2 w-16 rounded-full bg-gradient-to-r from-accent-500 via-brand-400 to-blue-500" />
               </div>
             );
           })}
