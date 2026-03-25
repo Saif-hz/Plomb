@@ -57,7 +57,7 @@ export default function Services() {
           transition={{ duration: 0.3 }}
           className="card interactive-card mx-auto max-w-4xl overflow-hidden rounded-3xl"
         >
-          <div className="grid gap-5 p-5 sm:gap-6 sm:p-8 md:grid-cols-[1fr_1.2fr] lg:p-10">
+          <div className="p-5 sm:p-8 lg:p-10">
             <div>
               <div className="mb-4 inline-flex rounded-2xl bg-brand-100 p-3 sm:mb-6 sm:p-4">
                 <Icon size={30} className="text-brand-700 sm:h-9 sm:w-9" />
@@ -83,15 +83,6 @@ export default function Services() {
                 ☎️ Demander cette intervention
               </a>
             </div>
-
-            <motion.img
-              src={selected.image}
-              alt={selected.title}
-              className="order-first h-56 w-full rounded-2xl object-cover shadow-lg sm:h-72 md:order-none md:h-80"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            />
           </div>
         </motion.div>
       </div>
