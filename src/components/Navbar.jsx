@@ -10,19 +10,20 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       {/* Trust Banner */}
-      <div className="bg-gradient-to-r from-accent-500 to-orange-500 py-2 text-white text-center text-xs sm:text-sm font-semibold">
-        🚀 <span className="hidden sm:inline">Intervention rapide garantie |</span> Tarifs transparents | <span className="hidden sm:inline">Devis gratuit</span>
+      <div className="bg-gradient-to-r from-accent-500 to-orange-500 py-2 text-center text-xs font-semibold text-white sm:text-sm">
+        <span className="sm:hidden">🚀 Intervention rapide | Devis gratuit</span>
+        <span className="hidden sm:inline">🚀 Intervention rapide garantie | Tarifs transparents | Devis gratuit</span>
       </div>
 
       <div className="border-b border-brand-700/30 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800/95 backdrop-blur-md">
         <nav className="section-shell py-2 sm:py-3" aria-label="Navigation principale">
-          <div className="navbar-shell flex h-16 items-center justify-between px-3 sm:h-20 sm:px-5">
+          <div className="navbar-shell flex h-[62px] items-center justify-between px-2.5 sm:h-20 sm:px-5">
             <a href="#" className="inline-flex items-center gap-2 sm:gap-3 text-lg font-heading font-bold tracking-tight sm:text-2xl">
               <span className="logo-frame">
                 <img
                   src={logoRabi}
                   alt="Logo AquaChauffagiste"
-                  className="h-12 sm:h-14 w-12 sm:w-14 object-contain"
+                  className="h-11 w-11 object-contain sm:h-14 sm:w-14"
                 />
               </span>
               <span className="hidden sm:inline">

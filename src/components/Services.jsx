@@ -8,9 +8,9 @@ export default function Services() {
   const Icon = selected.icon;
 
   return (
-    <section id="services" className="py-20 sm:py-28 bg-gradient-to-b from-slate-50 to-white">
+    <section id="services" className="bg-gradient-to-b from-slate-50 to-white py-14 sm:py-28">
       <div className="section-shell">
-        <div className="text-center mb-16">
+        <div className="mb-10 text-center sm:mb-16">
           <h2 className="section-title">Interventions les plus demandées</h2>
           <p className="section-subtitle text-center mx-auto">
             Services spécialisés, prix justes, exécution soignée. Découvrez ce que nous offrons.
@@ -18,7 +18,7 @@ export default function Services() {
         </div>
 
         {/* Service Selector Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+        <div className="mb-8 grid grid-cols-2 gap-2.5 sm:mb-12 sm:gap-3 md:grid-cols-4">
           {services.map((service, idx) => {
             const SIcon = service.icon;
             return (
@@ -27,14 +27,14 @@ export default function Services() {
                 onClick={() => setSelectedIdx(idx)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`rounded-2xl p-4 transition-all duration-300 border-2 ${
+                className={`rounded-2xl border-2 p-3 transition-all duration-300 sm:p-4 ${
                   selectedIdx === idx
                     ? 'border-accent-500 bg-accent-50 shadow-lg'
                     : 'border-slate-200 bg-white hover:border-brand-300'
                 }`}
               >
                 <SIcon
-                  size={28}
+                  size={24}
                   className={`mx-auto mb-2 ${
                     selectedIdx === idx ? 'text-accent-600' : 'text-brand-600'
                   }`}
@@ -55,30 +55,30 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="card interactive-card rounded-3xl overflow-hidden max-w-4xl mx-auto"
+          className="card interactive-card mx-auto max-w-4xl overflow-hidden rounded-3xl"
         >
-          <div className="grid md:grid-cols-[1fr_1.2fr] gap-6 p-8 lg:p-10">
+          <div className="grid gap-5 p-5 sm:gap-6 sm:p-8 md:grid-cols-[1fr_1.2fr] lg:p-10">
             <div>
-              <div className="inline-flex rounded-2xl bg-brand-100 p-4 mb-6">
-                <Icon size={36} className="text-brand-700" />
+              <div className="mb-4 inline-flex rounded-2xl bg-brand-100 p-3 sm:mb-6 sm:p-4">
+                <Icon size={30} className="text-brand-700 sm:h-9 sm:w-9" />
               </div>
-              <h3 className="font-heading text-3xl text-brand-900 mb-3">{selected.title}</h3>
-              <p className="text-slate-600 text-lg mb-6 leading-relaxed">{selected.description}</p>
+              <h3 className="mb-2 font-heading text-2xl text-brand-900 sm:mb-3 sm:text-3xl">{selected.title}</h3>
+              <p className="mb-5 text-base leading-relaxed text-slate-600 sm:mb-6 sm:text-lg">{selected.description}</p>
 
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3 p-4 bg-emerald-50 rounded-xl border border-emerald-200">
-                  <span className="text-2xl font-bold text-emerald-600">{selected.price}</span>
-                  <span className="text-sm text-emerald-700">prix transparent</span>
+              <div className="mb-7 space-y-3 sm:mb-8">
+                <div className="flex flex-wrap items-center gap-2.5 rounded-xl border border-emerald-200 bg-emerald-50 p-3 sm:gap-3 sm:p-4">
+                  <span className="text-xl font-bold text-emerald-600 sm:text-2xl">{selected.price}</span>
+                  <span className="text-xs text-emerald-700 sm:text-sm">prix transparent</span>
                 </div>
-                <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                  <span className="text-lg font-semibold text-blue-700">⏱ {selected.duration}</span>
-                  <span className="text-sm text-blue-600">durée moyenne</span>
+                <div className="flex flex-wrap items-center gap-2.5 rounded-xl border border-blue-200 bg-blue-50 p-3 sm:gap-3 sm:p-4">
+                  <span className="text-base font-semibold text-blue-700 sm:text-lg">⏱ {selected.duration}</span>
+                  <span className="text-xs text-blue-600 sm:text-sm">durée moyenne</span>
                 </div>
               </div>
 
               <a
                 href={`tel:${businessInfo.phoneHref}`}
-                className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-accent-500 text-white font-bold py-3 sm:py-4 transition hover:bg-accent-600 text-lg"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 py-3 text-base font-bold text-white transition hover:bg-accent-600 sm:py-4 sm:text-lg"
               >
                 ☎️ Demander cette intervention
               </a>
@@ -87,7 +87,7 @@ export default function Services() {
             <motion.img
               src={selected.image}
               alt={selected.title}
-              className="h-80 w-full rounded-2xl object-cover shadow-lg"
+              className="order-first h-56 w-full rounded-2xl object-cover shadow-lg sm:h-72 md:order-none md:h-80"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
