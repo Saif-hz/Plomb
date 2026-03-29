@@ -7,6 +7,11 @@ import {
   Timer,
   Wrench,
   Zap,
+  Search,
+  Wind,
+  Thermometer,
+  Pipette,
+  Filter,
 } from 'lucide-react';
 
 import imgShowerPanel from './images/0c8f62b3-f43e-4cd8-8606-f79b5c01b9de.jpg';
@@ -20,11 +25,11 @@ import imgDualBoilers from './images/a83be5ce-3058-47ca-afd7-4215148d93fa.jpg';
 import imgWaterTreatment from './images/c75ea8af-4d03-4304-9154-6afbb6d7631c.jpg';
 import imgThermostatWall from './images/d3411dc6-61e0-4b9e-a593-45467e057efe.jpg';
 import imgViessmannSystem from './images/d403e916-8371-4c64-801c-21b978aa31fb.jpg';
-import imgBeforeRenovation from './images/eea53c82-b8fb-489c-9482-1f6239991a1c.jpg';
-import imgAfterRenovation from './images/efb6d97e-f8e6-4039-9213-ea90b73cef4b.jpg';
-import imgWorkInProgress from './images/f11a4be3-fa0d-446d-903c-451a553156e7.jpg';
-import imgProofSmallOne from './images/f42d3aa4-52ed-4753-b185-984755ac7f12.jpg';
-import imgProofSmallTwo from './images/f9e2da8e-37d1-42e6-829e-a6251e6bc674.jpg';
+import imgAvantApresGaz from './images/avantapres.jpg';
+import imgAvantApresFioul from './images/avantapres1.jpg';
+import imgAvantApresThermo from './images/avantapres2.jpg';
+import imgAvantApresPac from './images/avantapres3.jpg';
+import imgAvantApresSdb from './images/avantapres4.jpg';
 import logoBoardMain from './images/d20b95e3-6fd4-4a61-88c6-4d37190d505d.jpg';
 import logoBoardExtraA from './images/6da8208d-0c3f-4e62-b8f2-5d7c4b53a1a6.jpg';
 import logoBoardExtraB from './images/7560d8fd-5ff0-40f7-bdd5-92135bac475b.jpg';
@@ -42,10 +47,12 @@ export const businessInfo = {
   shortTagline: 'Plomberie & Chauffage 24h/24 - 7j/7',
   phoneHref: '+33609217169',
   phoneDisplay: '+33 6 09 21 71 69',
-  email: 'Aquachauffagiste45@gmail.com',
+  phoneHrefSecondary: '+33642165546',
+  phoneDisplaySecondary: '+33 6 42 16 55 46',
+  email: 'herzisaif1@gmail.com',
   addressLine: '24 rue de la Sente',
   postalCity: '45800 Saint-Jean-de-Braye',
-  city: 'Orleans',
+  city: 'Orléans',
   regionCode: 'FR-45',
   latitude: 47.9029,
   longitude: 1.9093,
@@ -55,48 +62,100 @@ export const heroImage = imgViessmannSystem;
 
 export const services = [
   {
-    title: 'Dépannage fuite d\'eau',
-    description: 'Recherche de fuite visible ou encastrée, réparation rapide et contrôle d\'étanchéité.',
-    price: 'À partir de 90 EUR',
-    duration: '30 à 90 min',
-    icon: Droplets,
-    image: imgTechnician,
-  },
-  {
-    title: 'Débouchage canalisation',
-    description: 'Débouchage mécanique ou haute pression avec vérification complète des évacuations.',
-    price: 'À partir de 120 EUR',
-    duration: '45 à 120 min',
-    icon: Wrench,
-    image: imgWaterTreatment,
-  },
-  {
-    title: 'Installation chaudière / chauffe-eau',
-    description: 'Pose, remplacement et mise en service avec réglages pour performance et sécurité.',
-    price: 'À partir de 750 EUR',
-    duration: '2 à 4 h',
+    title: 'Entretien chaudière gaz',
+    description: 'Contrôle complet, nettoyage, réglage et vérification de sécurité de votre chaudière gaz. Certificat de conformité remis.',
+    price: 'À partir de 90 €',
+    duration: 'Intervention planifiée',
     icon: Flame,
-    image: imgBoilerCabinet,
+  },
+  {
+    title: 'Entretien annuel multi-énergies',
+    description: 'Entretien annuel obligatoire pour chaudières gaz, fioul, granulés et pompes à chaleur. Prolongez la durée de vie de vos équipements.',
+    price: 'Sur devis',
+    duration: 'Selon équipement',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Dépannage tous types de chaudières',
+    description: 'Dépannage rapide sur chaudières gaz, fioul, granulés et pompes à chaleur. Diagnostic précis, réparation efficace.',
+    price: 'Sur devis',
+    duration: 'Selon panne',
+    icon: Wrench,
+  },
+  {
+    title: 'Installation chauffage & eau chaude',
+    description: 'Installation de chaudières, ballons thermodynamiques et pompes à chaleur. Conseil personnalisé pour le meilleur rapport qualité-prix.',
+    price: 'Sur devis',
+    duration: 'Projet planifié',
+    icon: Zap,
+  },
+  {
+    title: "Ballon d'eau chaude",
+    description: "Dépannage de ballon d'eau chaude, détartrage complet et installation ou remplacement. Intervention rapide pour retrouver l'eau chaude.",
+    price: 'Sur devis',
+    duration: 'Selon intervention',
+    icon: Droplets,
+  },
+  {
+    title: 'Ramonage cheminée à bois',
+    description: 'Ramonage professionnel avec tarif fixe à Orléans et communes proches. Certificat de ramonage délivré.',
+    price: 'Tarif fixe 80 €',
+    duration: "Autour d'Orléans",
+    icon: Flame,
+  },
+  {
+    title: 'Recherche & réparation de fuites',
+    description: "Détection et réparation de fuites d'eau sur canalisations, raccords et robinetterie. Intervention rapide pour limiter les dégâts.",
+    price: 'Sur devis',
+    duration: 'Urgence possible',
+    icon: Search,
+  },
+  {
+    title: 'Débouchage canalisations',
+    description: "Dégorgement WC, éviers, douches, baignoires et colonnes d'évacuation. Matériel professionnel pour un résultat garanti.",
+    price: 'Sur devis',
+    duration: 'Intervention rapide',
+    icon: Filter,
   },
   {
     title: 'Rénovation salle de bain',
-    description: 'Rénovation complète, pose sanitaire et robinetterie avec finitions soignées.',
+    description: 'Conception et réalisation clé en main : plomberie, carrelage, pose de sanitaires. Transformez votre salle de bain.',
     price: 'Sur devis',
     duration: 'Projet planifié',
     icon: Bath,
-    image: imgShowerPanel,
+  },
+  {
+    title: 'Climatisation réversible',
+    description: "Installation et entretien de systèmes de climatisation réversible. Confort été comme hiver avec un seul équipement.",
+    price: 'Sur devis',
+    duration: 'Projet planifié',
+    icon: Wind,
+  },
+  {
+    title: 'Pompe à chaleur (PAC)',
+    description: "Installation, mise en service et maintenance de pompes à chaleur air-air et air-eau. Éligible aux aides de l'État.",
+    price: 'Sur devis',
+    duration: 'Projet planifié',
+    icon: Thermometer,
+  },
+  {
+    title: 'Robinetterie & sanitaires',
+    description: "Remplacement de mitigeurs, mécanismes de chasse d'eau, installation WC, lavabos et douches. Finitions soignées.",
+    price: 'Sur devis',
+    duration: 'Selon intervention',
+    icon: Pipette,
   },
 ];
 
 export const trustPoints = [
   {
     title: 'Intervention rapide',
-    description: 'Prise en charge rapide avec arrivée sous 60 minutes selon votre localisation.',
+    description: "Prise en charge rapide avec arrivée selon votre localisation. Confirmation du délai dès l'appel.",
     icon: Timer,
   },
   {
     title: 'Artisans certifiés',
-    description: 'Plombiers qualifiés, assurés, et formés aux standards de qualité les plus stricts.',
+    description: 'Plombiers qualifiés, assurés et formés aux standards de qualité les plus stricts.',
     icon: ShieldCheck,
   },
   {
@@ -106,25 +165,25 @@ export const trustPoints = [
   },
   {
     title: 'Disponibles 24h/24 - 7j/7',
-    description: 'Soir, week-end, jours fériés: une équipe reste joignable pour toute urgence plomberie.',
+    description: 'Soir, week-end, jours fériés : une équipe reste joignable pour toute urgence plomberie.',
     icon: Star,
   },
 ];
 
 export const quickProblems = [
   {
-    title: 'J\'ai une fuite',
-    text: 'Salle de bain, cuisine, compteur ou tuyau apparent',
+    title: 'Chaudière en panne',
+    text: 'Gaz, fioul, granulés ou PAC',
     href: '#contact',
   },
   {
-    title: 'Canalisation bouchée',
-    text: 'WC, évier, douche ou évacuation principale',
+    title: "Ballon d'eau chaude en panne",
+    text: 'Dépannage, détartrage ou remplacement',
     href: '#contact',
   },
   {
-    title: 'Plus d\'eau chaude',
-    text: 'Ballon en panne, thermostat, groupe sécurité',
+    title: 'Ramonage cheminée bois',
+    text: "Tarif fixe 80 € autour d'Orléans",
     href: '#contact',
   },
 ];
@@ -138,19 +197,19 @@ export const keyStats = [
 
 export const faqItems = [
   {
-    question: 'En combien de temps pouvez-vous intervenir en urgence ?',
+    question: "En combien de temps pouvez-vous intervenir en urgence ?",
     answer:
-      'Les délais varient selon votre localisation et la demande. Nous confirmons le délai d\'arrivée lors de votre appel. Notre équipe est mobilisée pour les urgences 24h/24.',
+      "Les délais varient selon votre localisation et la demande. Nous confirmons le délai d'arrivée lors de votre appel. Notre équipe est mobilisée pour les urgences 24h/24.",
   },
   {
     question: 'Le devis est-il vraiment gratuit ?',
     answer:
-      'Oui. Le devis est gratuit et sans engagement. Vous validez toujours le montant avant le début de l\'intervention.',
+      "Oui. Le devis est gratuit et sans engagement. Vous validez toujours le montant avant le début de l'intervention.",
   },
   {
     question: 'Y a-t-il une majoration le soir ou le week-end ?',
     answer:
-      'Nos tarifs sont annoncés en toute transparence. Si une majoration s\'applique, elle est clairement indiquée avant intervention.',
+      "Nos tarifs sont annoncés en toute transparence. Si une majoration s'applique, elle est clairement indiquée avant intervention.",
   },
   {
     question: 'Quelles garanties proposez-vous après travaux ?',
@@ -160,42 +219,50 @@ export const faqItems = [
   {
     question: 'Intervenez-vous aussi pour les projets de rénovation ?',
     answer:
-      'Oui, nous accompagnons aussi les projets planifiés: rénovation salle de bain, remplacement réseau, installation sanitaire complète.',
+      'Oui, nous accompagnons aussi les projets planifiés : rénovation salle de bain, remplacement réseau, installation sanitaire complète.',
   },
 ];
 
 export const projects = [
   {
-    title: 'Rénovation complète chaufferie',
-    before: 'Local ancien, installation vieillissante et rendement faible',
-    after: 'Système moderne installé avec tuyauterie neuve et finitions propres',
-    impact: 'Confort thermique retrouvé et baisse des pannes',
-    image: imgAfterRenovation,
-    proof: imgBeforeRenovation,
+    title: 'Chaudière à gaz : avant / après',
+    before: 'Installation encrassée avec performance dégradée',
+    after: 'Chaudière nettoyée, réglée et remise en service',
+    impact: 'Chauffe stable et meilleur rendement',
+    image: imgAvantApresGaz,
+    proof: imgViessmannSystem,
   },
   {
-    title: 'Douche premium sur mesure',
-    before: 'Salle d\'eau peu fonctionnelle',
-    after: 'Colonne de douche design et robinetterie encastrée',
-    impact: 'Finition haut de gamme et confort quotidien',
-    image: imgShowerPanel,
-    proof: imgProofSmallOne,
+    title: 'Chaudière fioul : avant / après',
+    before: 'Système ancien avec pertes de performance',
+    after: 'Réglage, sécurisation et redémarrage fiable',
+    impact: 'Confort retrouvé et réduction des pannes',
+    image: imgAvantApresFioul,
+    proof: imgBoilerCabinet,
   },
   {
-    title: 'Installation chaudière performante',
-    before: 'Chaudière ancienne avec fortes variations',
-    after: 'Nouvelle installation Viessmann avec réglage optimisé',
-    impact: 'Eau chaude stable et meilleure efficacité',
-    image: imgViessmannSystem,
-    proof: imgWorkInProgress,
+    title: 'Ballon thermodynamique : avant / après',
+    before: "Production d'eau chaude irrégulière",
+    after: 'Installation optimisée et fonctionnement régulier',
+    impact: 'Eau chaude fiable et consommation maîtrisée',
+    image: imgAvantApresThermo,
+    proof: imgThermostatWall,
   },
   {
-    title: 'Pack chauffage + régulation',
-    before: 'Pilotage température imprécis',
-    after: 'Thermostat intelligent et régulation efficace',
-    impact: 'Confort constant et pilotage simplifié',
-    image: imgThermostatWall,
-    proof: imgProofSmallTwo,
+    title: 'Pompe à chaleur : avant / après',
+    before: 'Équipement peu performant et bruit élevé',
+    after: 'PAC installée/réglée avec fonctionnement stable',
+    impact: 'Meilleure efficacité et confort thermique',
+    image: imgAvantApresPac,
+    proof: imgHeatPumpOutdoor,
+  },
+  {
+    title: 'Salle de bain : avant / après',
+    before: 'Espace ancien et peu fonctionnel',
+    after: 'Rénovation complète avec finitions propres',
+    impact: 'Confort quotidien et esthétique améliorée',
+    image: imgAvantApresSdb,
+    proof: imgShowerPanel,
   },
 ];
 
@@ -215,29 +282,41 @@ export const partnerLogoBoards = [logoBoardMain, logoBoardExtraA, logoBoardExtra
 export const testimonials = [
   {
     name: 'Sophie Martin',
-    text: 'Panne de chaudiere geree tres vite. Travail propre et explications claires.',
+    text: 'Panne de chaudière gérée très vite. Travail propre et explications claires. Je recommande !',
     area: 'Saint-Jean-de-Braye',
-    job: 'Depannage chauffage',
+    job: 'Dépannage chauffage',
   },
   {
     name: 'Karim Benali',
-    text: 'Intervention serieuse, ponctuelle, et devis respecte. Je recommande fortement.',
-    area: 'Orleans',
-    job: 'Debouchage evacuation',
+    text: 'Intervention sérieuse, ponctuelle, et devis respecté. Je recommande fortement.',
+    area: 'Orléans',
+    job: 'Débouchage évacuation',
   },
   {
     name: 'Claire Dubois',
-    text: 'Installation de chauffe-eau impeccable avec de tres bons conseils techniques.',
+    text: "Installation de chauffe-eau impeccable avec de très bons conseils techniques.",
     area: 'Fleury-les-Aubrais',
     job: 'Remplacement chauffe-eau',
+  },
+  {
+    name: 'Marc Lefèvre',
+    text: "Rénovation complète de notre salle de bain. Résultat impeccable, délais respectés et équipe très professionnelle.",
+    area: 'Saran',
+    job: 'Rénovation salle de bain',
+  },
+  {
+    name: 'Nadia Rousseau',
+    text: "Ramonage effectué rapidement et proprement. Certificat remis sur place. Très satisfaite du service.",
+    area: 'Chécy',
+    job: 'Ramonage cheminée',
   },
 ];
 
 export const cities = [
   'Saint-Jean-de-Braye',
-  'Orleans',
+  'Orléans',
   'Fleury-les-Aubrais',
   'Saran',
   'Semoy',
-  'Checy',
+  'Chécy',
 ];

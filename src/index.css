@@ -241,13 +241,13 @@ section {
 
 .navbar-cta {
   background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
-  box-shadow: 0 12px 24px rgba(234, 88, 12, 0.35);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.22);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .navbar-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 28px rgba(234, 88, 12, 0.42);
+  box-shadow: 0 12px 24px rgba(234, 88, 12, 0.32);
 }
 
 /* New: Better button states */
@@ -289,4 +289,13 @@ input:hover, textarea:hover, select:hover {
   100% {
     transform: scale(1);
   }
+}
+
+/* Image brightness correction for dark/raw photos */
+.img-bright {
+  filter: brightness(1.08) contrast(1.04) saturate(1.05);
+}
+
+.img-bright:hover {
+  filter: brightness(1.12) contrast(1.06) saturate(1.08);
 }

@@ -12,19 +12,19 @@ export default function WhyChooseUs() {
             </p>
             <h2 className="mt-2 font-heading text-3xl sm:text-4xl font-bold">Un processus clair en 3 étapes</h2>
             <p className="mt-4 max-w-md text-white/85">
-              Vous savez qui intervient, à quel prix et dans quel délai. Chaque étape est annoncée à l\'avance.
+              Vous savez qui intervient, à quel prix et dans quel délai. Chaque étape est annoncée à l'avance.
             </p>
             <ol className="mt-7 space-y-4 text-sm text-white/85">
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 rounded-full bg-accent-500 px-3 py-0.5 font-bold text-white">✓</span>
-                Appel ou formulaire: qualification du problème en moins de 3 minutes.
+                <span className="flex-shrink-0 rounded-full bg-accent-500 px-3 py-0.5 font-bold text-white">1</span>
+                Appel ou formulaire : qualification du problème en moins de 3 minutes.
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 rounded-full bg-accent-500 px-3 py-0.5 font-bold text-white">✓</span>
+                <span className="flex-shrink-0 rounded-full bg-accent-500 px-3 py-0.5 font-bold text-white">2</span>
                 Devis annoncé avant action, validation avec vous avant intervention.
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 rounded-full bg-accent-500 px-3 py-0.5 font-bold text-white">✓</span>
+                <span className="flex-shrink-0 rounded-full bg-accent-500 px-3 py-0.5 font-bold text-white">3</span>
                 Réparation soignée, vérification finale, zone laissée propre.
               </li>
             </ol>
@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
           <div className="grid gap-5 md:grid-cols-2">
             {trustPoints.map((point, idx) => {
               const Icon = point.icon;
-                            const colors = ['bg-blue-500', 'bg-emerald-500', 'bg-orange-500', 'bg-purple-500'];
+              const colors = ['bg-blue-500', 'bg-emerald-500', 'bg-orange-500', 'bg-purple-500'];
               return (
                 <motion.article
                   key={point.title}

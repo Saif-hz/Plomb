@@ -11,7 +11,7 @@ export default function FAQ() {
       <div className="section-shell">
         <h2 className="section-title">Questions fréquentes avant intervention</h2>
         <p className="section-subtitle">
-          Les réponses qui rassurent avant d'appeler: délais de réponse, tarification, garanties, procédures.
+          Les réponses qui rassurent avant d'appeler : délais de réponse, tarification, garanties, procédures.
         </p>
 
         <div className="mt-10 space-y-3">

@@ -1,4 +1,4 @@
-import { PhoneCall, MessageCircle } from 'lucide-react';
+import { PhoneCall, MessageCircle, Mail, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { businessInfo } from '../data';
 
@@ -29,7 +29,7 @@ export default function Contact() {
     }
   };
 
-  const whatsappMessage = encodeURIComponent('Bonjour, je souhaiterais une intervention pour mon probleme de plomberie/chauffage.');
+  const whatsappMessage = encodeURIComponent('Bonjour, je souhaiterais une intervention pour mon problème de plomberie/chauffage.');
   const whatsappLink = `https://wa.me/33609217169?text=${whatsappMessage}`;
 
   return (
@@ -42,13 +42,20 @@ export default function Contact() {
               Décrivez le problème en 30 secondes. Un expert vous contactera rapidement.
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href={`tel:${businessInfo.phoneHref}`}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-900 px-5 py-3 font-bold text-white transition hover:bg-brand-800 sm:w-auto"
               >
                 <PhoneCall size={18} />
-                Appeler
+                {businessInfo.phoneDisplay}
+              </a>
+              <a
+                href={`tel:${businessInfo.phoneHrefSecondary}`}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-brand-300 bg-brand-50 px-5 py-3 font-bold text-brand-900 transition hover:bg-brand-100 sm:w-auto"
+              >
+                <PhoneCall size={18} />
+                {businessInfo.phoneDisplaySecondary}
               </a>
               <a
                 href={whatsappLink}
@@ -61,18 +68,37 @@ export default function Contact() {
               </a>
             </div>
 
-            <p className="mt-6 text-sm text-slate-600">
-              Adresse: {businessInfo.addressLine}, {businessInfo.postalCity}
-            </p>
-            <p className="mt-2 text-sm text-slate-600">Email: {businessInfo.email}</p>
-            <ul className="mt-5 space-y-2 text-sm text-slate-700">
-              <li>Devis gratuit et sans engagement</li>
-              <li>Aucun paiement en ligne requis</li>
-              <li>Intervention rapide garantie</li>
-            </ul>
+            <div className="mt-8 space-y-3">
+              <div className="flex items-center gap-3 text-sm text-slate-700">
+                <MapPin size={16} className="text-brand-600 flex-shrink-0" />
+                <span>{businessInfo.addressLine}, {businessInfo.postalCity}</span>
+              </div>
+              <a href={`mailto:${businessInfo.email}`} className="flex items-center gap-3 text-sm text-slate-700 hover:text-brand-600 transition">
+                <Mail size={16} className="text-brand-600 flex-shrink-0" />
+                <span>{businessInfo.email}</span>
+              </a>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-3">
+              <div className="flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2">
+                <span className="text-emerald-600 font-bold text-sm">✓</span>
+                <span className="text-xs font-semibold text-emerald-800">Devis gratuit</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2">
+                <span className="text-emerald-600 font-bold text-sm">✓</span>
+                <span className="text-xs font-semibold text-emerald-800">Sans engagement</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2">
+                <span className="text-emerald-600 font-bold text-sm">✓</span>
+                <span className="text-xs font-semibold text-emerald-800">Intervention rapide</span>
+              </div>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4" aria-label="Formulaire de contact">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="Nouvelle demande via le site AquaChauffagiste" />
+
             <label className="block">
               <span className="mb-1 block text-sm font-semibold text-slate-700">Nom</span>
               <input
@@ -84,23 +110,41 @@ export default function Contact() {
               />
             </label>
             <label className="block">
-              <span className="mb-1 block text-sm font-semibold text-slate-700">Telephone</span>
+              <span className="mb-1 block text-sm font-semibold text-slate-700">Téléphone</span>
               <input
                 type="tel"
                 name="phone"
                 required
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-brand-400 focus:bg-white"
-                placeholder="Votre numero de telephone"
+                placeholder="Votre numéro de téléphone"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-1 block text-sm font-semibold text-slate-700">Email (optionnel)</span>
+              <input
+                type="email"
+                name="email"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-brand-400 focus:bg-white"
+                placeholder="Votre adresse email"
               />
             </label>
             <label className="block">
               <span className="mb-1 block text-sm font-semibold text-slate-700">Type de besoin</span>
               <select name="service_type" required className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-brand-400 focus:bg-white">
-                <option value="">-- Selectionnez --</option>
-                <option>Urgence plomberie</option>
-                <option>Debouchage</option>
-                <option>Chauffe-eau</option>
-                <option>Renovation salle de bain</option>
+                <option value="">-- Sélectionnez --</option>
+                <option>Entretien chaudière gaz</option>
+                <option>Entretien annuel multi-énergies</option>
+                <option>Dépannage chaudières (gaz, fioul, granulés, PAC)</option>
+                <option>Installation chauffage / eau chaude</option>
+                <option>Ballon d'eau chaude : dépannage, détartrage, installation</option>
+                <option>Ramonage cheminée à bois (80 €)</option>
+                <option>Recherche et réparation de fuites</option>
+                <option>Débouchage canalisations</option>
+                <option>Rénovation salle de bain</option>
+                <option>Climatisation réversible</option>
+                <option>Pompe à chaleur (PAC)</option>
+                <option>Robinetterie et sanitaires</option>
+                <option>Autre demande</option>
               </select>
             </label>
             <label className="block">
@@ -120,7 +164,7 @@ export default function Contact() {
             
             {submitStatus === 'success' && (
               <div className="rounded-xl bg-green-50 p-3 text-sm text-green-700 border border-green-200">
-                ✓ Merci! Nous vous recontacterons rapidement.
+                ✓ Merci ! Nous vous recontacterons rapidement.
               </div>
             )}
             {submitStatus === 'error' && (
@@ -134,7 +178,7 @@ export default function Contact() {
               disabled={isSubmitting}
               className="w-full rounded-full bg-accent-500 px-6 py-3.5 text-base font-bold text-white transition hover:bg-accent-600 disabled:opacity-60"
             >
-              {isSubmitting ? 'Envoi en cours...' : 'Recevoir mon devis'}
+              {isSubmitting ? 'Envoi en cours...' : 'Recevoir mon devis gratuit'}
             </button>
           </form>
         </div>

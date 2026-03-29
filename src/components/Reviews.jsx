@@ -2,10 +2,9 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { testimonials } from '../data';
 
-// Simple avatar generator
 const getInitials = (name) => name.split(' ').map(n => n[0]).join('').toUpperCase();
 const getAvatarBg = (index) => {
-  const colors = ['bg-blue-500', 'bg-emerald-500', 'bg-orange-500', 'bg-purple-500'];
+  const colors = ['bg-blue-500', 'bg-emerald-500', 'bg-orange-500', 'bg-purple-500', 'bg-rose-500'];
   return colors[index % colors.length];
 };
 
@@ -15,10 +14,10 @@ export default function Reviews() {
       <div className="section-shell">
         <h2 className="section-title">Avis clients</h2>
         <p className="section-subtitle">
-          Des interventions réussies, des clients satisfaits. On vous a retenu.
+          Des interventions réussies, des clients satisfaits. Ils nous font confiance.
         </p>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((item, idx) => (
             <motion.article
               key={item.name}
@@ -43,12 +42,12 @@ export default function Reviews() {
 
               {/* Review Text */}
               <p className="text-sm leading-relaxed text-slate-700 mb-6 italic">
-                "{item.text}"
+                &ldquo;{item.text}&rdquo;
               </p>
 
               {/* Reviewer Profile */}
               <div className="border-t border-slate-100 pt-4 flex items-center gap-3">
-                <div className={`${getAvatarBg(idx)} rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg flex-shrink-0`}>
+                <div className={`${getAvatarBg(idx)} rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-md`}>
                   {getInitials(item.name)}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -69,7 +68,7 @@ export default function Reviews() {
           className="mt-16 bg-gradient-to-r from-brand-50 to-orange-50 rounded-3xl p-8 border border-brand-100 text-center"
         >
           <p className="text-slate-600 mb-3">Plus de <span className="font-bold text-2xl text-brand-900">4,8/5</span> en moyenne sur plus de <span className="font-bold text-brand-900">1800</span> interventions</p>
-          <p className="text-sm text-slate-500">Les clients nous font confiance pour leur urgence. Vous aussi?</p>
+          <p className="text-sm text-slate-500">Les clients nous font confiance pour leur urgence. Vous aussi ?</p>
         </motion.div>
       </div>
     </section>

@@ -11,14 +11,14 @@ export default function Services() {
     <section id="services" className="bg-gradient-to-b from-slate-50 to-white py-14 sm:py-28">
       <div className="section-shell">
         <div className="mb-10 text-center sm:mb-16">
-          <h2 className="section-title">Interventions les plus demandées</h2>
+          <h2 className="section-title">Nos services</h2>
           <p className="section-subtitle text-center mx-auto">
-            Services spécialisés, prix justes, exécution soignée. Découvrez ce que nous offrons.
+            Services spécialisés, prix justes, exécution soignée. Découvrez tout ce que nous offrons.
           </p>
         </div>
 
         {/* Service Selector Grid */}
-        <div className="mb-8 grid grid-cols-2 gap-2.5 sm:mb-12 sm:gap-3 md:grid-cols-4">
+        <div className="mb-8 grid grid-cols-2 gap-2.5 sm:mb-12 sm:gap-3 md:grid-cols-4 lg:grid-cols-6">
           {services.map((service, idx) => {
             const SIcon = service.icon;
             return (

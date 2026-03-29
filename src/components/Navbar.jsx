@@ -1,6 +1,6 @@
 import { Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { businessInfo, navLinks } from '../data';
 import logoRabi from '../images/Logorabi3.optimized.png';
 
@@ -52,7 +52,7 @@ export default function Navbar() {
 
             <a
               href={`tel:${businessInfo.phoneHref}`}
-              className="navbar-cta hidden md:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="navbar-cta hidden lg:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white"
             >
               <Phone size={16} />
               Appeler maintenant
@@ -60,7 +60,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setOpen((prev) => !prev)}
-              className="inline-flex rounded-xl border border-white/20 bg-white/10 p-2.5 text-white transition hover:bg-white/20 md:hidden"
+              className="inline-flex rounded-xl border border-white/20 bg-white/10 p-2.5 text-white transition hover:bg-white/20 lg:hidden"
               aria-expanded={open}
               aria-label="Ouvrir le menu"
             >
@@ -70,37 +70,40 @@ export default function Navbar() {
         </nav>
       </div>
 
-      {open && (
-        <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          className="border-t border-white/10 bg-brand-900/95 md:hidden"
-        >
-          <div className="section-shell py-4">
-            <ul className="space-y-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="block rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
-                    onClick={() => setOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <a
-              href={`tel:${businessInfo.phoneHref}`}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-5 py-3 text-sm font-bold text-white"
-            >
-              <Phone size={16} />
-              Appeler maintenant
-            </a>
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
+            className="border-t border-white/10 bg-brand-900/95 backdrop-blur-md lg:hidden"
+          >
+            <div className="section-shell py-4">
+              <ul className="space-y-3">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="block rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+                      onClick={() => setOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={`tel:${businessInfo.phoneHref}`}
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-5 py-3 text-sm font-bold text-white"
+              >
+                <Phone size={16} />
+                Appeler maintenant
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

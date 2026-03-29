@@ -17,10 +17,10 @@ export default function Hero() {
             transition={{ duration: 0.55 }}
           >
             <div className="mb-6 flex flex-wrap gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-accent-300 bg-accent-50/80 px-3 py-1.5 text-xs font-bold text-accent-700">
-                ⚡ Plus rapide d'Orléans
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300/60 bg-amber-500/20 px-3 py-1.5 text-xs font-bold text-amber-100 backdrop-blur-sm">
+                ⚡ Intervention rapide à Orléans
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50/80 px-3 py-1.5 text-xs font-bold text-emerald-700">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-300/60 bg-amber-500/20 px-3 py-1.5 text-xs font-bold text-amber-100 backdrop-blur-sm">
                 💰 Tarifs les plus compétitifs
               </span>
             </div>
@@ -33,19 +33,20 @@ export default function Hero() {
             </p>
 
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/85 sm:text-lg">
-              Dépannage d'urgence, installation, rénovation. Tarif annoncé avant d'intervenir. Aucune surprise. Tous les Orleans vous connaissent dans le secteur, choisissez la rapidité et le prix justes.
+              Dépannage d'urgence, installation, rénovation. Tarif annoncé avant d'intervenir.
+              Aucune surprise. Tout Orléans nous connaît : choisissez la rapidité et le prix juste.
             </p>
 
             <div className="mb-8 mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4">
-              <div className="rounded-lg bg-white/10 border border-white/20 p-3 text-center">
+              <div className="rounded-lg bg-white/10 border border-white/20 p-3 text-center backdrop-blur-sm">
                 <p className="text-lg font-bold text-accent-300 sm:text-xl">2-45 min</p>
                 <p className="text-xs text-white/75 mt-1">selon zone</p>
               </div>
-              <div className="rounded-lg bg-white/10 border border-white/20 p-3 text-center">
-                <p className="text-lg font-bold text-emerald-300 sm:text-xl">À partir de 90€</p>
+              <div className="rounded-lg bg-white/10 border border-white/20 p-3 text-center backdrop-blur-sm">
+                <p className="text-lg font-bold text-emerald-300 sm:text-xl">À partir de 90 €</p>
                 <p className="text-xs text-white/75 mt-1">prix transparents</p>
               </div>
-              <div className="rounded-lg bg-white/10 border border-white/20 p-3 text-center">
+              <div className="rounded-lg bg-white/10 border border-white/20 p-3 text-center backdrop-blur-sm">
                 <p className="text-lg font-bold text-blue-300 sm:text-xl">7j/7 24h/24</p>
                 <p className="text-xs text-white/75 mt-1">toujours disponible</p>
               </div>
@@ -61,7 +62,7 @@ export default function Hero() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-white/10 px-6 py-3.5 text-base font-bold text-white transition hover:bg-white/20 sm:w-auto sm:py-4 sm:text-lg"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-white/10 px-6 py-3.5 text-base font-bold text-white transition hover:bg-white/20 sm:w-auto sm:py-4 sm:text-lg backdrop-blur-sm"
               >
                 <Send size={20} />
                 Devis gratuit
@@ -79,12 +80,12 @@ export default function Hero() {
             <div className="rounded-2xl bg-white p-4 text-slate-900 shadow-soft sm:p-6">
               <img
                 src={heroImage}
-                alt="Installation chauffage realisee par AquaChauffagiste"
-                className="mb-4 h-40 w-full rounded-xl object-cover sm:h-44"
+                alt="Installation chauffage réalisée par AquaChauffagiste"
+                className="mb-4 h-48 w-full rounded-xl object-cover sm:h-56 img-bright"
               />
               <p className="text-sm font-semibold text-brand-700">Diagnostic express</p>
-              <p className="mt-1 font-heading text-2xl text-brand-900 sm:text-3xl">Quel est votre probleme ?</p>
-              <p className="mt-2 text-sm text-slate-600">Selectionnez votre situation pour etre contacte plus vite.</p>
+              <p className="mt-1 font-heading text-2xl text-brand-900 sm:text-3xl">Quel est votre problème ?</p>
+              <p className="mt-2 text-sm text-slate-600">Sélectionnez votre situation pour être contacté plus vite.</p>
 
               <div className="mt-5 space-y-3">
                 {quickProblems.map((problem) => (

@@ -10,7 +10,7 @@ export default function ServiceArea() {
           <div>
             <h2 className="section-title">Zone d'intervention</h2>
             <p className="section-subtitle">
-              Intervention rapide sur {businessInfo.city} et sa proche couronne. Un doute sur votre secteur?
+              Intervention rapide sur {businessInfo.city} et sa proche couronne. Un doute sur votre secteur ?
               Appelez-nous et nous confirmons immédiatement.
             </p>
             <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -38,13 +38,13 @@ export default function ServiceArea() {
             <h3 className="mt-4 font-heading text-3xl font-bold">Hub intervention {businessInfo.city}</h3>
             <p className="mt-2 text-sm text-white/85">{businessInfo.addressLine}, {businessInfo.postalCity}</p>
             <p className="mt-6 text-sm text-white/85">
-              Cette implantation nous permet de réduire les délais d\'arrivée et de couvrir les
+              Cette implantation nous permet de réduire les délais d'arrivée et de couvrir les
               urgences sur toute la métropole.
             </p>
             <div className="mt-6 grid grid-cols-3 gap-2 text-center text-xs">
               <div className="rounded-lg bg-white/10 p-2">Selon zone</div>
-              <div className="rounded-lg bg-white/10 p-2">Confirme</div>
-              <div className="rounded-lg bg-white/10 p-2">A l'appel</div>
+              <div className="rounded-lg bg-white/10 p-2">Confirmé</div>
+              <div className="rounded-lg bg-white/10 p-2">À l'appel</div>
             </div>
           </motion.div>
         </div>
