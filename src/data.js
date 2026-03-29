@@ -49,7 +49,7 @@ export const businessInfo = {
   phoneDisplay: '+33 6 09 21 71 69',
   phoneHrefSecondary: '+33642165546',
   phoneDisplaySecondary: '+33 6 42 16 55 46',
-  email: 'herzisaif1@gmail.com',
+  email: 'Aquachauffagiste45@gmail.com',
   addressLine: '24 rue de la Sente',
   postalCity: '45800 Saint-Jean-de-Braye',
   city: 'Orléans',
