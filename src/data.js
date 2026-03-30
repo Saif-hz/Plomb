@@ -189,7 +189,7 @@ export const quickProblems = [
 ];
 
 export const keyStats = [
-  { target: 12, suffix: ' min', label: 'Délai moyen de rappel' },
+  { target: 30, suffix: ' min', label: 'Délai moyen de rappel' },
   { target: 1800, suffix: '+', label: 'Interventions annuelles' },
   { target: 96, suffix: ' %', label: 'Résolution au premier passage' },
   { target: 4.9, suffix: '/5', decimals: 1, label: 'Satisfaction client moyenne' },
