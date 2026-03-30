@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute -left-20 top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-16 bottom-8 h-72 w-72 rounded-full bg-accent-500/30 blur-3xl" />
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_65%,rgba(248,250,252,1)_100%)]" />
-      <div className="section-shell relative py-12 sm:py-24 lg:py-28">
+      <div className="section-shell relative pb-12 pt-6 sm:pb-24 sm:pt-10 lg:pb-28 lg:pt-12">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
