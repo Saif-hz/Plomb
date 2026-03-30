@@ -26,8 +26,8 @@ import imgWaterTreatment from './images/c75ea8af-4d03-4304-9154-6afbb6d7631c.jpg
 import imgThermostatWall from './images/d3411dc6-61e0-4b9e-a593-45467e057efe.jpg';
 import imgViessmannSystem from './images/d403e916-8371-4c64-801c-21b978aa31fb.jpg';
 import imgAvantApresGaz from './images/avantapres.jpg';
-import imgAvantApresFioul from './images/avantapres1.jpg';
-import imgAvantApresThermo from './images/avantapres2.jpg';
+import imgAvantApresFioul from './images/avantapres2.jpg';
+import imgAvantApresThermo from './images/avantapres1.jpg';
 import imgAvantApresPac from './images/avantapres3.jpg';
 import imgAvantApresSdb from './images/avantapres4.jpg';
 import logoBoardMain from './images/d20b95e3-6fd4-4a61-88c6-4d37190d505d.jpg';
