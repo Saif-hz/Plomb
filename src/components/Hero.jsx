@@ -56,30 +56,42 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* CTA buttons — phone + WhatsApp on mobile, + devis on desktop */}
-            <div className="flex flex-col gap-2.5 sm:flex-row sm:gap-3">
+            {/* CTA buttons */}
+            <div className="flex flex-col gap-3 sm:flex-row sm:gap-3.5">
               <a
                 href={`tel:${businessInfo.phoneHref}`}
-                className="cta-pulse inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-6 py-3.5 text-base font-bold text-white transition hover:bg-accent-600 sm:w-auto sm:py-4 sm:text-lg"
+                className="hero-btn-primary group relative inline-flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold sm:w-auto sm:text-lg"
               >
-                <PhoneCall size={20} />
-                Appeler maintenant
+                <span className="relative z-10 flex items-center gap-2.5 transition-transform duration-300 group-hover:scale-[1.03]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 transition-all duration-300 group-hover:bg-white/30 group-hover:rotate-6">
+                    <PhoneCall size={17} />
+                  </span>
+                  Appeler maintenant
+                </span>
               </a>
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-green-600 px-6 py-3.5 text-base font-bold text-white transition hover:bg-green-700 sm:w-auto sm:py-4 sm:text-lg"
+                className="hero-btn-glass group relative inline-flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold text-white sm:w-auto sm:text-lg"
               >
-                <MessageCircle size={20} />
-                WhatsApp
+                <span className="relative z-10 flex items-center gap-2.5 transition-transform duration-300 group-hover:scale-[1.03]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 transition-all duration-300 group-hover:bg-white/20 group-hover:-rotate-6">
+                    <MessageCircle size={17} />
+                  </span>
+                  WhatsApp
+                </span>
               </a>
               <a
                 href="#contact"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-white/10 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/20 sm:w-auto sm:py-4 sm:text-lg backdrop-blur-sm"
+                className="hero-btn-glass group relative inline-flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-2xl px-7 py-4 text-base font-bold text-white sm:w-auto sm:text-lg"
               >
-                <Send size={18} />
-                Devis gratuit
+                <span className="relative z-10 flex items-center gap-2.5 transition-transform duration-300 group-hover:scale-[1.03]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 transition-all duration-300 group-hover:bg-white/20 group-hover:rotate-6">
+                    <Send size={16} />
+                  </span>
+                  Devis gratuit
+                </span>
               </a>
             </div>
           </motion.div>

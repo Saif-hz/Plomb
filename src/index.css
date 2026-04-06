@@ -300,6 +300,98 @@ input:hover, textarea:hover, select:hover {
   filter: brightness(1.12) contrast(1.06) saturate(1.08);
 }
 
+/* Hero CTA — Primary (Call) */
+.hero-btn-primary {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 50%, #e8eeff 100%);
+  color: #1b3b75;
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.4) inset,
+    0 -2px 6px 0 rgba(47,125,255,0.08) inset,
+    0 8px 24px -4px rgba(15,37,74,0.25),
+    0 2px 6px -1px rgba(15,37,74,0.12);
+  transition: transform 0.35s cubic-bezier(.22,1,.36,1), box-shadow 0.35s cubic-bezier(.22,1,.36,1);
+}
+
+.hero-btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,138,31,0.12) 0%, rgba(47,125,255,0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.5) inset,
+    0 -2px 8px 0 rgba(47,125,255,0.12) inset,
+    0 16px 40px -6px rgba(15,37,74,0.3),
+    0 4px 12px -2px rgba(15,37,74,0.15);
+}
+
+.hero-btn-primary:hover::before {
+  opacity: 1;
+}
+
+.hero-btn-primary:active {
+  transform: translateY(0px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.3) inset,
+    0 4px 12px -2px rgba(15,37,74,0.2);
+}
+
+/* Hero CTA — Glass (WhatsApp, Devis) */
+.hero-btn-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.12) 0%,
+    rgba(255,255,255,0.06) 50%,
+    rgba(255,255,255,0.03) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.1) inset,
+    0 -1px 4px 0 rgba(255,255,255,0.04) inset,
+    0 6px 20px -4px rgba(0,0,0,0.15);
+  transition: transform 0.35s cubic-bezier(.22,1,.36,1),
+              box-shadow 0.35s cubic-bezier(.22,1,.36,1),
+              border-color 0.35s ease,
+              background 0.35s ease;
+}
+
+.hero-btn-glass:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.32);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.10) 50%,
+    rgba(255,255,255,0.06) 100%
+  );
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.15) inset,
+    0 -1px 6px 0 rgba(255,255,255,0.06) inset,
+    0 14px 36px -6px rgba(0,0,0,0.2);
+}
+
+.hero-btn-glass:active {
+  transform: translateY(0px);
+  box-shadow:
+    0 1px 0 0 rgba(255,255,255,0.08) inset,
+    0 4px 10px -2px rgba(0,0,0,0.12);
+}
+
+@media (hover: none) {
+  .hero-btn-primary:hover,
+  .hero-btn-glass:hover {
+    transform: none;
+  }
+}
+
 /* Hide scrollbar for horizontal scroll areas */
 .scrollbar-hide {
   -ms-overflow-style: none;
