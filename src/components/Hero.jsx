@@ -26,7 +26,7 @@ export default function Hero() {
             </div>
 
             <h1 className="mb-2 font-heading text-3xl leading-tight sm:text-5xl lg:text-6xl">
-              Plomberie & Chauffage
+              Plombier Orléans & Chauffagiste
             </h1>
             <p className="mb-4 text-lg font-semibold text-accent-300 sm:text-2xl">
               Intervention rapide, prix juste, 24h/24
