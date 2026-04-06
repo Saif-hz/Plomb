@@ -299,3 +299,13 @@ input:hover, textarea:hover, select:hover {
 .img-bright:hover {
   filter: brightness(1.12) contrast(1.06) saturate(1.08);
 }
+
+/* Hide scrollbar for horizontal scroll areas */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

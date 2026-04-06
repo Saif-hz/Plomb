@@ -32,7 +32,7 @@ export default function Navbar() {
                 <span className="text-brand-300">C</span>
                 <span className="text-white">hauffagiste</span>
               </span>
-              <span className="sm:hidden text-[14px] leading-none">
+              <span className="sm:hidden text-[15px] leading-none">
                 <span className="text-accent-400">A</span>
                 <span className="text-white">qua</span>
                 <span className="text-brand-300">C</span>
@@ -58,14 +58,23 @@ export default function Navbar() {
               Appeler maintenant
             </a>
 
-            <button
-              onClick={() => setOpen((prev) => !prev)}
-              className="inline-flex rounded-xl border border-white/20 bg-white/10 p-2.5 text-white transition hover:bg-white/20 lg:hidden"
-              aria-expanded={open}
-              aria-label="Ouvrir le menu"
-            >
-              {open ? <X size={22} /> : <Menu size={22} />}
-            </button>
+            <div className="flex items-center gap-2 lg:hidden">
+              <a
+                href={`tel:${businessInfo.phoneHref}`}
+                className="inline-flex rounded-xl border border-accent-400/40 bg-accent-500/20 p-2.5 text-accent-300 transition hover:bg-accent-500/30"
+                aria-label="Appeler maintenant"
+              >
+                <Phone size={20} />
+              </a>
+              <button
+                onClick={() => setOpen((prev) => !prev)}
+                className="inline-flex rounded-xl border border-white/20 bg-white/10 p-2.5 text-white transition hover:bg-white/20"
+                aria-expanded={open}
+                aria-label="Ouvrir le menu"
+              >
+                {open ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
         </nav>
       </div>

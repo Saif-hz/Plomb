@@ -17,36 +17,38 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service Selector Grid */}
-        <div className="mb-8 grid grid-cols-2 gap-2.5 sm:mb-12 sm:gap-3 md:grid-cols-4 lg:grid-cols-6">
-          {services.map((service, idx) => {
-            const SIcon = service.icon;
-            return (
-              <motion.button
-                key={service.title}
-                onClick={() => setSelectedIdx(idx)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`rounded-2xl border-2 p-3 transition-all duration-300 sm:p-4 ${
-                  selectedIdx === idx
-                    ? 'border-accent-500 bg-accent-50 shadow-lg'
-                    : 'border-slate-200 bg-white hover:border-brand-300'
-                }`}
-              >
-                <SIcon
-                  size={24}
-                  className={`mx-auto mb-2 ${
-                    selectedIdx === idx ? 'text-accent-600' : 'text-brand-600'
+        {/* Service Selector — horizontal scroll on mobile, grid on desktop */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex gap-2 overflow-x-auto pb-3 -mx-3 px-3 sm:mx-0 sm:px-0 sm:overflow-visible sm:grid sm:grid-cols-4 sm:gap-3 lg:grid-cols-6 scrollbar-hide">
+            {services.map((service, idx) => {
+              const SIcon = service.icon;
+              return (
+                <motion.button
+                  key={service.title}
+                  onClick={() => setSelectedIdx(idx)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`flex-shrink-0 w-[120px] sm:w-auto rounded-2xl border-2 p-3 transition-all duration-300 sm:p-4 ${
+                    selectedIdx === idx
+                      ? 'border-accent-500 bg-accent-50 shadow-lg'
+                      : 'border-slate-200 bg-white hover:border-brand-300'
                   }`}
-                />
-                <p className={`text-xs sm:text-sm font-bold text-center line-clamp-2 ${
-                  selectedIdx === idx ? 'text-brand-900' : 'text-slate-700'
-                }`}>
-                  {service.title}
-                </p>
-              </motion.button>
-            );
-          })}
+                >
+                  <SIcon
+                    size={22}
+                    className={`mx-auto mb-1.5 sm:mb-2 ${
+                      selectedIdx === idx ? 'text-accent-600' : 'text-brand-600'
+                    }`}
+                  />
+                  <p className={`text-xs sm:text-sm font-bold text-center line-clamp-2 ${
+                    selectedIdx === idx ? 'text-brand-900' : 'text-slate-700'
+                  }`}>
+                    {service.title}
+                  </p>
+                </motion.button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Detailed Service View */}

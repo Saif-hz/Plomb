@@ -25,6 +25,7 @@ import imgDualBoilers from './images/a83be5ce-3058-47ca-afd7-4215148d93fa.jpg';
 import imgWaterTreatment from './images/c75ea8af-4d03-4304-9154-6afbb6d7631c.jpg';
 import imgThermostatWall from './images/d3411dc6-61e0-4b9e-a593-45467e057efe.jpg';
 import imgViessmannSystem from './images/d403e916-8371-4c64-801c-21b978aa31fb.jpg';
+import imgHeroPlumbing from './images/newwebplumbing.png';
 import imgAvantApresGaz from './images/avantapres.jpg';
 import imgAvantApresFioul from './images/avantapres2.jpg';
 import imgAvantApresThermo from './images/avantapres1.jpg';
@@ -58,7 +59,7 @@ export const businessInfo = {
   longitude: 1.9093,
 };
 
-export const heroImage = imgViessmannSystem;
+export const heroImage = imgHeroPlumbing;
 
 export const services = [
   {

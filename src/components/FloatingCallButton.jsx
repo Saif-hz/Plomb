@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowRight, Phone } from 'lucide-react';
+import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
 import { businessInfo } from '../data';
 
 const sectionActions = {
@@ -7,7 +7,7 @@ const sectionActions = {
   projects: { href: '#projects', label: 'Voir realisations' },
   reviews: { href: '#reviews', label: 'Voir les avis' },
   faq: { href: '#faq', label: 'Voir la FAQ' },
-  contact: { href: '#contact', label: 'Remplir devis' },
+  contact: { href: '#contact', label: 'Devis gratuit' },
 };
 
 export default function FloatingCallButton() {
@@ -48,22 +48,34 @@ export default function FloatingCallButton() {
     [activeSection]
   );
 
+  const whatsappLink = 'https://wa.me/33609217169?text=' + encodeURIComponent('Bonjour, je souhaiterais une intervention pour mon problème de plomberie/chauffage.');
+
   return (
-    <div className="fixed bottom-[max(0.75rem,env(safe-area-inset-bottom))] left-1/2 z-50 flex w-[calc(100%-1rem)] max-w-md -translate-x-1/2 gap-2 rounded-2xl border border-white/60 bg-white/95 p-1.5 shadow-xl backdrop-blur md:hidden">
+    <div className="fixed bottom-[max(0.75rem,env(safe-area-inset-bottom))] left-1/2 z-50 flex w-[calc(100%-1rem)] max-w-md -translate-x-1/2 gap-1.5 rounded-2xl border border-white/60 bg-white/95 p-1.5 shadow-xl backdrop-blur md:hidden">
       <a
         href={`tel:${businessInfo.phoneHref}`}
-        className="cta-pulse inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-3 py-2.5 text-[13px] font-bold text-white"
+        className="cta-pulse inline-flex flex-[1.2] items-center justify-center gap-1.5 rounded-xl bg-accent-500 px-2.5 py-2.5 text-[13px] font-bold text-white"
         aria-label="Appeler maintenant"
       >
-        <Phone size={16} />
+        <Phone size={15} />
         Appeler
       </a>
       <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex flex-1 items-center justify-center gap-1 rounded-xl bg-green-600 px-2.5 py-2.5 text-[13px] font-bold text-white"
+        aria-label="WhatsApp"
+      >
+        <MessageCircle size={15} />
+        WhatsApp
+      </a>
+      <a
         href={secondaryAction.href}
-        className="inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl bg-brand-900 px-3 py-2.5 text-[13px] font-bold text-white transition hover:bg-brand-800"
+        className="inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl bg-brand-900 px-2.5 py-2.5 text-[13px] font-bold text-white transition hover:bg-brand-800"
       >
         <span className="truncate">{secondaryAction.label}</span>
-        <ArrowRight size={14} />
+        <ArrowRight size={13} />
       </a>
     </div>
   );
