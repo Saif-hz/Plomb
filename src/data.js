@@ -57,6 +57,9 @@ export const businessInfo = {
   regionCode: 'FR-45',
   latitude: 47.9029,
   longitude: 1.9093,
+  googleBusinessProfileUrl: 'https://share.google/sPzdjCU6bYQaX0rJh',
+  googleMapsDirectionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=24+rue+de+la+Sente,+45800+Saint-Jean-de-Braye',
+  googleMapsEmbedUrl: 'https://www.google.com/maps?q=24+rue+de+la+Sente,+45800+Saint-Jean-de-Braye&output=embed',
 };
 
 export const heroImage = imgHeroPlumbing;

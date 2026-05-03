@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
-import { testimonials } from '../data';
+import { ExternalLink, Star } from 'lucide-react';
+import { businessInfo, testimonials } from '../data';
 
 const getInitials = (name) => name.split(' ').map(n => n[0]).join('').toUpperCase();
 const getAvatarBg = (index) => {
@@ -16,6 +16,31 @@ export default function Reviews() {
         <p className="section-subtitle">
           Des interventions réussies, des clients satisfaits. Ils nous font confiance.
         </p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-8 rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50 to-white p-5 sm:p-6"
+        >
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-amber-700">Avis verifies sur Google</p>
+              <p className="mt-1 text-sm text-slate-700 sm:text-base">
+                Consultez le profil Google Business d&apos;AquaChauffagiste pour voir les avis recents et la note publique.
+              </p>
+            </div>
+            <a
+              href={businessInfo.googleBusinessProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-brand-900 shadow-sm ring-1 ring-amber-200 transition hover:shadow"
+            >
+              Voir les avis Google
+              <ExternalLink size={16} />
+            </a>
+          </div>
+        </motion.div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((item, idx) => (

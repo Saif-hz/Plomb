@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
+import { ExternalLink, MapPin, Navigation } from 'lucide-react';
 import { businessInfo, cities } from '../data';
 
 export default function ServiceArea() {
@@ -45,6 +45,37 @@ export default function ServiceArea() {
               <div className="rounded-lg bg-white/10 p-2">Selon zone</div>
               <div className="rounded-lg bg-white/10 p-2">Confirmé</div>
               <div className="rounded-lg bg-white/10 p-2">À l'appel</div>
+            </div>
+
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+              <a
+                href={businessInfo.googleMapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-bold text-brand-900 transition hover:bg-slate-100"
+              >
+                <Navigation size={16} />
+                Itineraire
+              </a>
+              <a
+                href={businessInfo.googleBusinessProfileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/20"
+              >
+                <ExternalLink size={16} />
+                Profil Google
+              </a>
+            </div>
+
+            <div className="mt-5 overflow-hidden rounded-xl border border-white/20 bg-white">
+              <iframe
+                title="AquaChauffagiste - localisation"
+                src={businessInfo.googleMapsEmbedUrl}
+                className="h-56 w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </motion.div>
         </div>
